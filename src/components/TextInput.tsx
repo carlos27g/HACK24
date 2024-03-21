@@ -12,7 +12,7 @@ export type TextInputProps = {
 export const TextInput = (porps: TextInputProps) => {
   const { label, value, onChange, title } = porps;
   return (
-    <div>
+    <div style={styles.container}>
       <div style={styles.title}>{title ?? label}</div>
       <input
         type={label}
@@ -37,5 +37,11 @@ const styles: Styles = {
     margin: "10px",
     borderRadius: "5px",
     border: "1px solid #bd0320",
+  },
+  container: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "stretch",
+    justifyContent: "center",
   },
 };

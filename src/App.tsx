@@ -24,8 +24,8 @@ const db = getFirestore(app);
 function App() {
   return (
     <>
-      <NavBar />
       <BrowserRouter>
+        <NavBar />
         <Routes>
           <Route path="*" element={<Navigate to={"/home"} />} />
           <Route path="/home" element={<HomeScreen />} />

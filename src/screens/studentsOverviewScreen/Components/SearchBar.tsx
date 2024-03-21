@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import { Styles } from "../../../App";
 import { colors } from "../../../assets/colors";
+const MathildeImage = require("../../../assets/images/mathilde.png");
+const LauraImage = require("../../..//assets/images/laura.png");
+const EliasImage = require("../../../assets/images/elias.png");
+const HendrikImage = require("../../../assets/images/hendrik.png");
+const JustinImage = require("../../../assets/images/justin.png");
 
 enum Status {
   RequiresAttention = "Requires Attention",
@@ -24,35 +29,35 @@ export const SearchBar = () => {
       competencies: 22,
       progress: 10,
       status: Status.RequiresAttention,
-      picture: "https://adrienzaradez.com/mathilde.png",
+      picture: MathildeImage,
     },
     {
       name: "Laura Frey",
       competencies: 25,
       progress: -45,
       status: Status.OnTrack,
-      picture: "https://adrienzaradez.com/laura.png",
+      picture: LauraImage,
     },
     {
       name: "Elias Baumann",
       competencies: 27,
       progress: 2,
       status: Status.RequiresAttention,
-      picture: "https://adrienzaradez.com/elias.png",
+      picture: EliasImage,
     },
     {
       name: "Hendrik Rodriguez",
       competencies: 30,
       progress: -60,
       status: Status.RequiresAttention,
-      picture: "https://adrienzaradez.com/hendrik.png",
+      picture: HendrikImage,
     },
     {
       name: "Justin Hauser",
       competencies: 43,
       progress: 40,
       status: Status.OnTrack,
-      picture: "https://adrienzaradez.com/justin.png",
+      picture: JustinImage,
     },
   ];
 

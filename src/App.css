@@ -36,3 +36,44 @@
     transform: rotate(360deg);
   }
 }
+
+.dashboardSimpleButton:hover {
+  transform: scale(1.1);
+  background-color: black;
+  color: #bd0320;
+  border-color: black;
+}
+
+.dashboardSimpleButton {
+  transition: all 1s ease;
+}
+
+.dashboardGridArea1 {
+  grid-area: addNewExam;
+}
+
+.dashboardGridArea2 {
+  grid-area: viewStudents;
+}
+
+.dashboardGridArea3 {
+  grid-area: viewExams;
+}
+
+.dashboardGridArea4 {
+  grid-area: testedCompetencesOverview;
+}
+
+.dashboardGridArea5 {
+  grid-area: correctedExamsOverview;
+}
+
+.dashboardGridContainer {
+  display: grid;
+  grid-template-areas:
+    "addNewExam addNewExam testedCompetencesOverview testedCompetencesOverview"
+    "correctedExamsOverview correctedExamsOverview viewStudents viewExams";
+  grid-gap: 10px;
+  height: 65vh;
+  width: 100%;
+}

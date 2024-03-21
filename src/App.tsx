@@ -9,8 +9,8 @@ import { AddExamScreen } from "./screens/addExamScreen/AddExamScreen";
 function App() {
   return (
     <>
-      <NavBar />
       <BrowserRouter>
+        <NavBar />
         <Routes>
           <Route path="*" element={<Navigate to={"/home"} />} />
           <Route path="/home" element={<HomeScreen />} />

@@ -1,13 +1,20 @@
 import React from "react";
 import { Styles } from "../App";
+import { useNavigate } from "react-router-dom";
 
 const NavBar = () => {
   const onLogout = () => {
     console.log("Logout Clicked");
   };
+  const navigate = useNavigate();
+  const handleTitleClick = () => {
+    navigate("/");
+  };
   return (
     <div style={styles.container}>
-      <div style={styles.title}>HackExam</div>
+      <div style={styles.title} onClick={handleTitleClick}>
+        HackExam
+      </div>
       <button style={styles.logoutButton} onClick={onLogout}>
         Log Out
       </button>
@@ -33,6 +40,7 @@ const styles: Styles = {
     fontSize: "3em",
     fontWeight: "bold",
     marginLeft: "20px",
+    cursor: "pointer",
   },
   logoutButton: {
     padding: "10px 20px",

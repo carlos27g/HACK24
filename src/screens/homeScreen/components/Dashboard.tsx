@@ -1,6 +1,5 @@
 import React from "react";
 import { Styles } from "../../../App";
-<<<<<<< HEAD
 import { colors } from "../../../assets/colors";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
@@ -22,28 +21,6 @@ export const Dashboard = () => {
   const onAddExamClick = () => {
     navigate("/add-new-exam");
   };
-=======
-import { doc, setDoc } from "firebase/firestore"; 
-import { db } from "../../../App";
-
-export const Dashboard = () => {
-  const onAddExamClick = async () => {
-    console.log("Add Exam Clicked");
-
-    try {
-        await setDoc(doc(db, "classes", "exams"), {
-            name: "Addition of Fractions",
-            subject: "math",
-            date: "2024-10-10",
-        });
-
-        console.log("Document written successfully");
-    } catch (error) {
-        console.error("Error writing document: ", error);
-    }
-};
-
->>>>>>> f44f307af1c057e63d9b08677f7a4c8117210d16
 
   const onViewStudentsClick = () => {
     navigate("/all-students");

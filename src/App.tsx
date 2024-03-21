@@ -5,7 +5,7 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { HomeScreen } from "./screens/homeScreen/HomeScreen";
 import NavBar from "./components/Navbar";
 import { AddExamScreen } from "./screens/addExamScreen/AddExamScreen";
-import { AllStudents } from "./screens/studentsView/AllStudents";
+import { StudentsOverviewScreen } from "./screens/studentsOverviewScreen/StudentsOverviewScreen";
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
@@ -30,7 +30,7 @@ function App() {
           <Route path="*" element={<Navigate to={"/home"} />} />
           <Route path="/home" element={<HomeScreen />} />
           <Route path="/add-new-exam" element={<AddExamScreen />} />
-          <Route path="/all-students" element={<AllStudents/>} /> 
+          <Route path="/all-students" element={<StudentsOverviewScreen />} />
         </Routes>
       </BrowserRouter>
     </>

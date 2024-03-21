@@ -23,7 +23,7 @@ export const Dashboard = () => {
   };
 
   const onViewStudentsClick = () => {
-    console.log("View Students Clicked");
+    navigate("/all-students");
   };
 
   const onViewExamsClick = () => {

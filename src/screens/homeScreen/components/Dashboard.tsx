@@ -1,10 +1,25 @@
 import React from "react";
 import { Styles } from "../../../App";
+import { doc, setDoc } from "firebase/firestore"; 
+import { db } from "../../../App";
 
 export const Dashboard = () => {
-  const onAddExamClick = () => {
+  const onAddExamClick = async () => {
     console.log("Add Exam Clicked");
-  };
+
+    try {
+        await setDoc(doc(db, "classes", "exams"), {
+            name: "Addition of Fractions",
+            subject: "math",
+            date: "2024-10-10",
+        });
+
+        console.log("Document written successfully");
+    } catch (error) {
+        console.error("Error writing document: ", error);
+    }
+};
+
 
   const onViewStudentsClick = () => {
     console.log("View Students Clicked");

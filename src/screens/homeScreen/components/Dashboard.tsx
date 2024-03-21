@@ -27,7 +27,7 @@ export const Dashboard = () => {
   };
 
   const onViewExamsClick = () => {
-    console.log("View Exams Clicked");
+    navigate("/all-exams");
   };
   return (
     <div style={styles.dashboardContainer}>

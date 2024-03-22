@@ -5,6 +5,9 @@ import Close from "../../assets/svgAssets/Close.svg";
 import Document from "../../assets/svgAssets/Document.svg";
 import { TextInput } from "../../components/TextInput";
 import { Tag } from "../../components/Tag";
+import { Navigate, useNavigate } from "react-router-dom";
+import React, { useRef } from 'react';
+const ExamQR = require("../../assets/docs/LernkontrollenMathematikQR.pdf");
 
 const competences = [
   ["Addition", "Subtraction", "Multiplication"],
@@ -13,6 +16,8 @@ const competences = [
 ];
 
 export const AddExamScreen = () => {
+  const navigate = useNavigate();
+  const iframeRef = useRef<HTMLIFrameElement>(null);
   const [uploadedFile, setUploadedFile] = useState<File | null>(null);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const [uploadConfirmed, setUploadConfirmed] = useState(false);
@@ -60,6 +65,19 @@ export const AddExamScreen = () => {
     if (uploadedFile) setUploadConfirmed(true);
   };
 
+  const handlePrint = () => {
+    // Ensure the iframe and its contentWindow are loaded before calling print
+    if (iframeRef.current && iframeRef.current.contentWindow) {
+      iframeRef.current.contentWindow.print();
+    } else {
+      console.error('Unable to access iframe content for printing');
+    }
+  };
+
+  const handleClose = () => {
+    navigate("/home");
+  }
+
   return (
     <div style={styles.container}>
       <div style={styles.innerContainer}>
@@ -68,7 +86,7 @@ export const AddExamScreen = () => {
             <span style={styles.title}>Create new exam</span>
             <span>Simply upload your exam and we will process it for you</span>
           </div>
-          <div>
+          <div onClick={handleClose} style={styles.closeButton}>
             <img src={Close} alt="close" width={64} />
           </div>
         </div>
@@ -141,6 +159,15 @@ export const AddExamScreen = () => {
           </div>
         )}
         <div style={styles.buttonContainer}>
+          {uploadConfirmed && <div style={styles.secondaryButton} onClick={handlePrint}>
+            Print exam
+            <iframe
+              src={ExamQR}
+              ref={iframeRef}
+              style={{ display: 'none' }}
+              title="PDF Print Frame"
+            />
+          </div>}
           <div style={styles.button} onClick={handleCreateExam}>
             {!uploadConfirmed ? "Create Exam" : "Confirm Exam Upload"}
           </div>
@@ -223,6 +250,7 @@ const styles: Styles = {
     alignItems: "center",
     justifyContent: "flex-end",
     width: "90%",
+    gap: "20px",
   },
   examPreviewContainer: {
     width: "50%",
@@ -259,5 +287,19 @@ const styles: Styles = {
     display: "flex",
     flexDirection: "column",
     gap: "10px",
+  },
+  secondaryButton: {
+    padding: "20px 40px",
+    backgroundColor: colors.white,
+    color: colors.primary,
+    border: "1px solid ",
+    borderColor: colors.primary,
+    borderRadius: "50px",
+    cursor: "pointer",
+    fontSize: "large",
+    fontWeight: "normal",
+  },
+  closeButton: {
+    cursor: "pointer",
   },
 };

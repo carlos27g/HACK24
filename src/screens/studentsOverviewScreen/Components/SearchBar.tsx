@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { Styles } from "../../../App";
 import { colors } from "../../../assets/colors";
+import { useNavigate } from "react-router-dom";
+
 const MathildeImage = require("../../../assets/images/mathilde.png");
 const LauraImage = require("../../..//assets/images/laura.png");
 const EliasImage = require("../../../assets/images/elias.png");
 const HendrikImage = require("../../../assets/images/hendrik.png");
 const JustinImage = require("../../../assets/images/justin.png");
-import { useNavigate } from "react-router-dom";
 
 export enum Status {
   RequiresAttention = "Requires Attention",

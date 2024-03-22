@@ -8,6 +8,7 @@ import { AddExamScreen } from "./screens/addExamScreen/AddExamScreen";
 import { StudentsOverviewScreen } from "./screens/studentsOverviewScreen/StudentsOverviewScreen";
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
+import { StudentDetailScreen } from "./screens/studentDetailScreen/StudentDetailScreen";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -23,17 +24,16 @@ const db = getFirestore(app);
 
 function App() {
   return (
-    <>
-      <BrowserRouter>
-        <NavBar />
-        <Routes>
-          <Route path="*" element={<Navigate to={"/home"} />} />
-          <Route path="/home" element={<HomeScreen />} />
-          <Route path="/add-new-exam" element={<AddExamScreen />} />
-          <Route path="/all-students" element={<StudentsOverviewScreen />} />
-        </Routes>
-      </BrowserRouter>
-    </>
+    <BrowserRouter>
+      <NavBar />
+      <Routes>
+        <Route path="*" element={<Navigate to={"/home"} />} />
+        <Route path="/home" element={<HomeScreen />} />
+        <Route path="/add-new-exam" element={<AddExamScreen />} />
+        <Route path="/all-students" element={<StudentsOverviewScreen />} />
+        <Route path="/student-details" element={<StudentDetailScreen />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

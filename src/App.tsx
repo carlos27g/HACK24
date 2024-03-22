@@ -10,6 +10,7 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { ExamsOverviewScreen } from "./screens/examsOverviewScreen/ExamsOverviewScreen";
 import { StudentDetailScreen } from "./screens/studentDetailScreen/StudentDetailScreen";
+import ExamDetailedScreen from "./screens/examDetailedScreen/ExamDetailedScreen";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,

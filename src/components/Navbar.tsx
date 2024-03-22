@@ -13,7 +13,7 @@ const NavBar = () => {
   return (
     <div style={styles.container}>
       <div style={styles.title} onClick={handleTitleClick}>
-        HackExam
+        EduVist
       </div>
       <button style={styles.logoutButton} onClick={onLogout}>
         Log Out

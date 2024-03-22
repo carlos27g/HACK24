@@ -24,7 +24,7 @@ export const GradesGraph = () => {
 
   return (
     <div style={styles.container}>
-      <ReactResizableBox width={400} height={300}>
+      <ReactResizableBox width={500} height={350}>
         <Chart
           options={{
             data: studentGraphData,

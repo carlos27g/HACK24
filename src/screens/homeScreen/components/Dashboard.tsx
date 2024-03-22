@@ -97,10 +97,14 @@ export const Dashboard = () => {
 
 const styles: Styles = {
   dashboardContainer: {
-    height: "100vh",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "flex-start",
+    height: "70vh",
     width: "80vw",
     padding: "0 10%",
-    marginTop: "10vh",
+    marginTop: "5vh",
   },
   upperRow: {
     display: "flex",

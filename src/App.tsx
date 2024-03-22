@@ -9,6 +9,7 @@ import { StudentsOverviewScreen } from "./screens/studentsOverviewScreen/Student
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { ExamsOverviewScreen } from "./screens/examsOverviewScreen/ExamsOverviewScreen";
+import ExamDetailedScreen from "./screens/examDetailedScreen/ExamDetailedScreen";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -33,6 +34,7 @@ function App() {
           <Route path="/add-new-exam" element={<AddExamScreen />} />
           <Route path="/all-students" element={<StudentsOverviewScreen />} />
           <Route path="/all-exams" element={<ExamsOverviewScreen />} />
+          <Route path="/exam-details" element={<ExamDetailedScreen />} />
         </Routes>
       </BrowserRouter>
     </>

@@ -65,6 +65,10 @@ export const AddExamScreen = () => {
     if (uploadedFile) setUploadConfirmed(true);
   };
 
+  const handleSubmit = () => {
+    navigate("/all-exams");
+  }
+
   const handlePrint = () => {
     // Ensure the iframe and its contentWindow are loaded before calling print
     if (iframeRef.current && iframeRef.current.contentWindow) {
@@ -168,7 +172,7 @@ export const AddExamScreen = () => {
               title="PDF Print Frame"
             />
           </div>}
-          <div style={styles.button} onClick={handleCreateExam}>
+          <div style={styles.button} onClick={!uploadConfirmed ? handleCreateExam : handleSubmit}>
             {!uploadConfirmed ? "Create Exam" : "Confirm Exam Upload"}
           </div>
         </div>

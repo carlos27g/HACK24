@@ -9,6 +9,7 @@ import { StudentsOverviewScreen } from "./screens/studentsOverviewScreen/Student
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { ExamsOverviewScreen } from "./screens/examsOverviewScreen/ExamsOverviewScreen";
+import { StudentDetailScreen } from "./screens/studentDetailScreen/StudentDetailScreen";
 import ExamDetailedScreen from "./screens/examDetailedScreen/ExamDetailedScreen";
 
 const firebaseConfig = {
@@ -25,19 +26,17 @@ const db = getFirestore(app);
 
 function App() {
   return (
-    <>
-      <BrowserRouter>
-        <NavBar />
-        <Routes>
-          <Route path="*" element={<Navigate to={"/home"} />} />
-          <Route path="/home" element={<HomeScreen />} />
-          <Route path="/add-new-exam" element={<AddExamScreen />} />
-          <Route path="/all-students" element={<StudentsOverviewScreen />} />
-          <Route path="/all-exams" element={<ExamsOverviewScreen />} />
-          <Route path="/exam-details" element={<ExamDetailedScreen />} />
-        </Routes>
-      </BrowserRouter>
-    </>
+    <BrowserRouter>
+      <NavBar />
+      <Routes>
+        <Route path="*" element={<Navigate to={"/home"} />} />
+        <Route path="/home" element={<HomeScreen />} />
+        <Route path="/add-new-exam" element={<AddExamScreen />} />
+        <Route path="/all-students" element={<StudentsOverviewScreen />} />
+        <Route path="/all-exams" element={<ExamsOverviewScreen />} />
+        <Route path="/student-details" element={<StudentDetailScreen />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

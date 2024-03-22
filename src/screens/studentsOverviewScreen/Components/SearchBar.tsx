@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import { Styles } from "../../../App";
 import { colors } from "../../../assets/colors";
+import { useNavigate } from "react-router-dom";
+
 const MathildeImage = require("../../../assets/images/mathilde.png");
 const LauraImage = require("../../..//assets/images/laura.png");
 const EliasImage = require("../../../assets/images/elias.png");
 const HendrikImage = require("../../../assets/images/hendrik.png");
 const JustinImage = require("../../../assets/images/justin.png");
 
-enum Status {
+export enum Status {
   RequiresAttention = "Requires Attention",
   OnTrack = "On Track",
 }
@@ -23,6 +25,7 @@ const getStatusColor = (status: Status) => {
 
 export const SearchBar = () => {
   const [searchInput, setSearchInput] = useState("");
+  const navigate = useNavigate();
   const studentData = [
     {
       name: "Mathilde Trösch",
@@ -72,6 +75,10 @@ export const SearchBar = () => {
     );
   }
 
+  const handleNavigateToStudentDetail = () => {
+    navigate("/student-details");
+  };
+
   return (
     <div style={styles.container}>
       <input
@@ -89,7 +96,12 @@ export const SearchBar = () => {
           <div style={styles.valueContainer}>Status</div>
         </div>
         {[...filteredStudents, ...filteredStudents].map((student, index) => (
-          <div style={styles.rowContainer} key={index}>
+          <div
+            className="searchBarRowContainer"
+            style={styles.rowContainer}
+            key={index}
+            onClick={handleNavigateToStudentDetail}
+          >
             <div style={styles.firstColumn}>
               <img
                 style={styles.pictureContainer}

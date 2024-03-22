@@ -6,6 +6,7 @@ export const colors = {
   subtitle: "#4d4d4d", // dark gray
   black: "#000000", // black
   grey: "#e0e0e0", // gray
+  darkGrey: "#afafaf", // dark gray
   orange: "#F6DACF",
   darkOrange: "#C8988F",
   green: "#C4F1EA",

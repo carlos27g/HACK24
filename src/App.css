@@ -77,3 +77,12 @@
   height: 65vh;
   width: 100%;
 }
+
+.searchBarRowContainer:hover {
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+.searchBarRowContainer {
+  transition: all 1s ease;
+}
